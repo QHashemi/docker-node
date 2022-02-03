@@ -7,6 +7,10 @@ const router = require("./Router");
 
 
 app.use("/", router);
+app.use("/login" ,(req, res)=>{
+	res.send("LOGIN PAGE");	
+	
+});
 
 
 
