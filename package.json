@@ -1,0 +1,18 @@
+{
+  "name": "node-docker",
+  "version": "1.0.0",
+  "description": "This App is about using Docker and Node toggeter.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.2",
+    "node-modules": "^1.0.1",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon -L index.js"
+  },
+  "author": "Qasem Hashemi",
+  "license": "ISC"
+}
