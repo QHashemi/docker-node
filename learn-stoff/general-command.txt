@@ -1,0 +1,18 @@
+#install express
+npm install express
+
+#Install nodemone
+npm install nodemone --save-dev 
+ "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon -L index.js"
+  },
+
+
+
+
+
+
+
+
+

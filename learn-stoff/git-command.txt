@@ -1,0 +1,8 @@
+git init
+git add .
+git commit -m "First commit"
+git remote add origin URL
+git push -u origin master
+
+#solve problem with commit confilict
+git pull -rebase origin master = main

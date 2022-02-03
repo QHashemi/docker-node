@@ -1,0 +1,54 @@
+
+# Remove the Contianer
+docker rm node-app -f
+
+
+# Build The image
+docker build -t node-app-image .
+
+
+# Build the Container on Port 5000 from image, we have created 
+docker run -p 5000:5000 -d --name node-app node-app-image
+
+
+# Get in to working Directory in Ducker Container
+docker exec -it node-app bash
+
+#Remove the docker valume with file name:
+docker volume rm "name"
+
+# Remove all unnesesery volume
+docker volume prune
+# Remove the volumen after removing the contiainer
+-fv 
+docker rm node-app -fv
+
+
+#Synic The File, When every time changed: Important: Nodemone should be use to take effect on changed code.
+docker run -v %cd%:/app -p 5000:5000 -d --name node-app node-app-image
+
+#Give you the logs of the Container
+Docker logs node-app
+
+
+# When the app overwrite other file and folder it will not touch the node_modules folder and just overwrite others
+docker run -v %cd%:/app -v /app/node_modules -p 5000:5000 -d --name node-app node-app-image
+
+# It will use the envierment variable file for setting the envierment variable
+docker run -v %cd%:/app -v /app/node_modules --env-file ./.env -p 5000:4000 -d --name node-app node-app-image
+
+-v = volumen
+---env = envierment variable
+-v  %cd%:/app  = it will syinc current folder with folder in the container "/app" 
+-v /app/node_modules = it will not overwrite the node_modules file 
+--env PORT=5000 = Envierment Variable is set on port 4000
+--env-file ./.env  = It will use .env file from current directory to set envierment variable
+
+
+
+Important for Synic:
+If content of the file is changed it will take effect and change the other file in /app directory
+if we create a file it will create a file in /app directory too
+If we create a file in /app directory it will create file in our current directory too.
+You can prevent this behavior by using a comment after /app:ro = Read Only. When you in the bash the docker is not able to create a file or folder.
+

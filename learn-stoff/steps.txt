@@ -1,0 +1,11 @@
+1. Install Docker, Install Linux subsystem
+2. Create Express app
+3. Add Docker file
+4. Add every needed layer in to the Docker file
+5. Create docker image
+6. Create Docker container for image
+7. Run the Container
+8. Create Docker .dockerignore file. to not copy unnesesery file in to container
+9. syinc the current directory with container directory with bind method.( -v  pathToFolderInLocalMachine:PathTOFolderOnContainer )
+10. To take effect of the change we have to install Nodemone
+11. Prevent not to overwrite node_modules folder in Docker container.
